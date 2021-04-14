@@ -3,7 +3,7 @@ class Conexion{
     private $mysqli;
     private $resultado;
     
-    function abrir(){
+    public function abrir(){
         $this -> mysqli = new mysqli("localhost", "root", "", "distri-market");
         //$this -> mysqli = new mysqli("localhost", "itiud_amazonas", "86Q2fyaICa", "itiud_amazonas");        
         $this -> mysqli -> set_charset("utf8");
