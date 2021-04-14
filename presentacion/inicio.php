@@ -39,7 +39,7 @@
                     Autenticacion
                     </h5>
                     <div class="card-body">
-                        <form action="autenticar.php?pid=" <?php echo base64_encode('presentacion/autenticar.php') ?> " method="post">
+                        <form action="autenticar.php?pid=<?php echo base64_encode("presentacion/autenticar.php") ?>" method="post">
                             <div class="form-floating mb-3">
                                 <input type="email" name="correo" class="form-control" id="floatingInput" placeholder="name@example.com">
                                 <label for="floatingInput">Correo</label>
