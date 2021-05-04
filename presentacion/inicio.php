@@ -1,73 +1,41 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" >
 
-    <title>Distri Market</title>
-  </head>
-  <body>
-    <div class="container">
-        <div class="row mt-2">
-            <div class="col-4 col-sm-3 col-lg-2 text-center">
-                <img src="img/logo_transparent.png" alt="" width="100%">
+<main class="mb-8  bg-primary">
+    <div class="grid grid-cols-1  ">
+
+           <div class="-mt-20 mx-auto " >
+                <img src="img/logo_transparent.png" class="img-fluid" alt="Logo de Distri-Market"  style="height: 400px">
             </div>
 
-            <div class="col-8 col-sm-9 col-lg-10 pt-5">
-                <h1 class="text-center fw-bolder">Distri-Market</h1>
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-12 col-md-8">
-                <div class="card">
-                    <h5 class="card-header">
-                    Bienvenido
-                    </h5>
-                    <div class="card-body">
-                        <img src="img/virtualreality.svg" alt="" width="100%">
+
+            <div class="bg-white w-11/12 md:w-5/6 lg:w-8/12 rounded-2xl mx-auto shadow-2xl xl:w-1/3 lg:w-5/6 2xl:w-auto 2xl:my-auto xl:my-auto md:my-auto  -mt-20 mb-10 md:mb-12 md:px-2 px-4 py-12 lg:px-20 lg:py-20 lg:mb-18 xl:-mt-10 xl:mb-36 2xl:mb-40 text-center ">
+                <h3 class="mb-8  text-2xl font-bold text-gray-800 tracking-wider ">Bienvenido</h3>
+                <?php
+                if(isset($_GET["error"])){
+                    ?>
+                    <div class="animate-bounce text-red-500 mb-2" role="alert">
+                        <strong>Correo o Contraseña incorrecta</strong>
+                        <p class="opacity-80"> Vuelve a intentarlo </p>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
+                    <?php
+                }
+                ?>
+                <form action="index.php?pid=<?php echo base64_encode("presentacion/autenticar.php") ?>" method="post">
+                    <input type="email" name="correo" class="w-11/12  xl:w-11/12  h-12 rounded-xl border border-secondary text-gray-700 py-2 px-6 focus:outline-none focus:shadow-2xl hover:bg-secondary "  placeholder="Correo electrónico" required>
+                    <input type="password" name="clave" class="w-11/12  xl:w-11/12 h-12 rounded-xl mt-4 border border-secondary text-gray-700 py-2 px-6 focus:outline-none focus:shadow-2xl hover:bg-secondary"  placeholder="Introduce tu contraseña"  required>
+                    <button type="submit" class="w-11/12 mt-4 h-14 xl:w-3/4 2xl:w-1/2 shadow-lg bg-secondary font-semibold text-xl text-gray-700 rounded-xl block px-6 py-2 mx-auto hover:shadow-none  hover:text-quaternary hover:bg-tertiary focus:outline-none focus:shadow-md">Iniciar sesión</button>
 
-                </div>
+                </form>
+
             </div>
-            <div class="col-12 col-md-4">
-                <div class="card">
-                    <h5  class="card-header">
-                    Autenticacion
-                    </h5>
-                    <div class="card-body">
-                        <form action="autenticar.php?pid=<?php echo base64_encode("presentacion/autenticar.php") ?>" method="post">
-                            <div class="form-floating mb-3">
-                                <input type="email" name="correo" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">Correo</label>
-                            </div>
-                            <div class="mb-3 form-floating">
-                                <input type="password" name="clave" class="form-control" id="floatingPassword" placeholder="Clave">
-                                <label for="floatingPassword">Clave</label>
-                            </div>
-                            <div class="form-group ">
-                                <button type="submit" class="btn btn-primary form-control ">Iniciar Sesion</button>
-                            </div>
-                        </form>
-                        <?php
-                        if(isset($_GET["error"])){
-                            ?>
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                <strong>Correo y clave</strong> Contrasenia o correo mal
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                            <?php
-                        }
-                        ?>
+
+
+
                         
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-  </body>
-</html>
+</main>
+
+
+

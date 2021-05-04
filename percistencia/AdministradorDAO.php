@@ -19,7 +19,12 @@ class AdministradorDAO{
     }
 
     public function autenticar(){
-        return "SELECT idadministardor FROM administrador WHERE correo = '". $this->correo . "' AND clave='". md5($this->clave). "'";
+
+        return "SELECT 	idadministrador  FROM administrador WHERE correo = '". $this->correo . "' AND clave='". md5($this->clave). "'";
+    }
+
+    public function consultar(){
+        return "SELECT nombre, apellido, correo FROM administrador WHERE idadministrador={$this->id}";
     }
 
 
